@@ -2,7 +2,7 @@ package es.fplumara.dam1.prestamos.model;
 
 import java.util.Set;
 
-public abstract class Material {
+public abstract class Material implements Identificable {
 
     //Atributos:
     private String id;
