@@ -9,6 +9,9 @@ public class Prestamo implements Identificable {
     private String profesor;
     private LocalDate fecha;
 
+    public Prestamo(String prestamoId, String idMaterial, String profesor, LocalDate fecha) {
+    }
+
     // Getter:
 
     public String getId() {
