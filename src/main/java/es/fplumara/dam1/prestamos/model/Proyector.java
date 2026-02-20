@@ -1,8 +1,20 @@
 package es.fplumara.dam1.prestamos.model;
 
-public abstract class Proyector extends Material {
+public class Proyector extends Material {
     private int lumens;
 
+    public Proyector(String id, String nombre, EstadoMaterial estado, int lumens) {
+        super(id, nombre, estado);
+        this.lumens = lumens;
+    }
+
+    public int getLumens(){
+        return lumens;
+    }
+
     //Getter:
-    public abstract String getTipo();
+    @Override
+    public String getTipo() {
+        return "Proyector";
+    }
 }

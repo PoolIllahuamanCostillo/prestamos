@@ -90,4 +90,9 @@ public class MaterialService implements Repository<Material> {
         material.setEstado(EstadoMaterial.BAJA);
         this.materialRepository.save(material);
     }
+
+    @Override
+    public void devolverMaterial(String idMaterial) {
+
+    }
 }

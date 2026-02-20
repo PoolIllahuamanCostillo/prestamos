@@ -11,7 +11,10 @@ public abstract class Material implements Identificable {
     private Set<String> etiquetas;
 
     // Constructor:
-    public Material(){
+    public Material(String id, String nombre, EstadoMaterial estado){
+        this.id =id;
+        this.nombre = nombre;
+        this.estado =estado;
 
     }
 
@@ -27,6 +30,7 @@ public abstract class Material implements Identificable {
         this.estado = estado;
         this.etiquetas = etiquetas;
     }
+
 
     // Getters and Setters:
 

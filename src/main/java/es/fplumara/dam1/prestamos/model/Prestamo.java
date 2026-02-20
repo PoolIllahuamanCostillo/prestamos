@@ -17,4 +17,12 @@ public class Prestamo implements Identificable {
     public String getId() {
         return id;
     }
+
+    public String getIdMaterial() {
+        return idMaterial;
+    }
+
+    public void setIdMaterial(String idMaterial) {
+        this.idMaterial = idMaterial;
+    }
 }
