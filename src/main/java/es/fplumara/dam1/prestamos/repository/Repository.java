@@ -19,4 +19,5 @@ public interface Repository<T extends Identificable> {
 
     public void delete(String id);
 
+    public void devolverMaterial(String idMaterial);
 }

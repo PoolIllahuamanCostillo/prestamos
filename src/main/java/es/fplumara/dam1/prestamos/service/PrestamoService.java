@@ -91,6 +91,31 @@ public class PrestamoService implements Repository<Prestamo> {
     @Override
     public void delete(String id) {
         if (id == null) return;
-
+        prestamoRepository.delete(id);
+        materialRepository.delete(id);
     }
+
+    @Override
+    public void devolverMaterial(String idMaterial) {
+
+        if (idMaterial == null || idMaterial.isBlank()) {
+            throw new IllegalArgumentException("idMaterial inválido");
+        }
+
+        Optional<Material> opt = materialRepository.findById(idMaterial);
+
+        if (opt.isEmpty()) {
+            throw new NoEncontradoException("Material no encontrado");
+        }
+
+        Material material = opt.get();
+
+        if (material.getEstado() != EstadoMaterial.PRESTADO) {
+            throw new MaterialNoDisponibleException("Material no está prestado");
+        }
+
+        material.setEstado(EstadoMaterial.DISPONIBLE);
+        materialRepository.save(material);
+    }
+
 }

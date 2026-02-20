@@ -1,10 +1,27 @@
 package es.fplumara.dam1.prestamos.model;
 
-public abstract class Portatil extends Material {
+import java.util.Set;
+
+public class Portatil extends Material {
     private int ramGB;
 
-    //Getters
-    public abstract String getTipo();
+
+    public Portatil(String id, String nombre, EstadoMaterial estado, int ramGB) {
+        super(id, nombre, estado);
+        this.ramGB = ramGB;
+    }
+
+    @Override
+    public String getTipo(){
+        return "Portatil";
+    }
+
+
+    /*  @Override
+    public String toString() {
+        return "Portatil{id='" + getId() + "', nombre='" + getNombre() + "', estado=" + getEstado()
+                + ", ramGB=" + ramGB + ", etiquetas=" + getEtiquetas() + "}";
+    } */
 
 }
 
